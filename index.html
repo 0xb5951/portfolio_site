@@ -1,29 +1,23 @@
-<html lang="ja">
+<html>
 <head>
-  <meta charset="utf-8">
-  <title>Web Speech API サンプル</title>
+<meta charset="UTF-8">
+<title>Web Speech API</title>
+<script>
+window.SpeechRecognition = window.SpeechRecognition || webkitSpeechRecognition;
+var recognition = new webkitSpeechRecognition();
+recognition.lang = 'ja';
+
+recognition.onresult = function(event){
+    var results = event.results;
+    for (var i = event.resultIndex; i<results.length; i++)
+        document.getElementById('result_text').innerHTML = results[i][0].transcript;
+}
+</script>
 </head>
 <body>
-  <h1>音声確認アプリ</h1>
-
-  <div>
-    <p>音声を確認したい単語を入力してください。</p>
-    <input type="text" id="word">
-    <button id="button" onclick="pronounce()">発音を確認</button>
-  </div>
-
-<script type="text/javascript">
-  'use strict'
-
-  function pronounce() {
-    let word = document.getElementById('word').value;
-    let u = new SpeechSynthesisUtterance();
-    u.lang = 'en-US';
-    u.text = word;
-    speechSynthesis.speak(u);
-  }
-
-</script>
-
+<textarea id="result_text" cols="100" rows="10">
+</textarea>
+<br>
+<input type="button" onClick="recognition.start();" value="音認開始">
 </body>
 </html>
