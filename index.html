@@ -1,43 +1,32 @@
-<html>
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href=https://cdn.rawgit.com/amiechen/stitches-template-generator/master/public/stitches.css>
-    <link href=https://fonts.googleapis.com/css?family=Muli:300,400,600,700,800,900 rel="stylesheet">
-    <link rel="stylesheet" href=https://use.fontawesome.com/releases/v5.0.13/css/all.css integrity=sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp crossorigin="anonymous">
-    <title>PortFolio</title>
-  </head>
-  <body><section class="font-sans h-screen w-full bg-cover text-center flex flex-col items-center justify-center" style="background:url(https://stitches-cdn.hyperyolo.com/demo-bg.png) no-repeat center;">
-  <label for="tagline" class="uppercase tracking-extrawide text-white text-xs font-hairline mt-8">This is my portfolio site</label>
-  <h3 class="text-white mx-auto max-w-sm mt-4 font-normal text-2xl leading-normal">Hello World! I'm glad you saw this site.</h3>
-</section><section class="font-sans container m-auto text-center py-8">
-  <label for="tagline" class="uppercase tracking-wide font-bold text-grey-dark">Sample test</label>
-  <h1 class="mt-2 mb-4 font-medium max-w-sm m-auto">test test</h1>
-  <hr class="border-b w-8 m-auto my-6">
-  <div class="flex flex-wrap justify-between items-start">
-    <div class="w-full sm:w-1/2 md:w-1/4 flex flex-col items-center justify-center p-4">
-      <div class="w-14 h-14 rounded-full mr-4 bg-grey-light" alt=""></div>
-      <h2 class="my-4 font-medium">それっぽい分割メニュー</h2>
-      <p class="leading-normal mb-4 text-grey-dark">それぞれの説明っぽいことも書けるよ</p>
-    </div>
-    <div class="w-full sm:w-1/2 md:w-1/4 flex flex-col items-center justify-center p-4">
-      <div class="w-14 h-14 rounded-full mr-4 bg-grey-light" alt=""></div>
-      <h2 class="my-4 font-medium">それっぽい分割メニュー</h2>
-      <p class="leading-normal mb-4 text-grey-dark">それぞれの説明っぽいことも書けるよ</p>
-    </div>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <title>Web Speech API サンプル 2</title>
+</head>
+<body>
+  <h1>英語の音声確認アプリ</h1>
+
+  <div>
+    <p>音声を確認したい単語を入力してください。</p>
+    <input type="text" id="word">
+    <button id="button" onclick="pronounce()">発音を確認</button>
   </div>
-</section>
-  <div class="mx-auto container overflow-hidden flex flex-col md:flex-row justify-between pb-4 text-center md:text-left">
-    <!-- フォローボタンのリンク -->
-    <div class="text-grey-dark flex flex-col items-center w-full md:w-1/4 mt-6 md:mt-0">
-      <h4 class="inline-block py-2 px-3 uppercase font-bold tracking-wide text-grey-darkest">Follow Us</h4>
-      <div class="flex pl-0 md:pl-4 justify-start">
-        <a class="block flex items-center text-grey-darkest hover:text-black mr-6 no-underline" href="#"><i class="fab fa-github-alt"></i></a>
-        <a class="block flex items-center text-grey-darkest hover:text-black mr-6 no-underline" href="#"><i class="fab fa-slack"></i></a>
-        <a class="block flex items-center text-grey-darkest hover:text-black no-underline" href="#"><i class="fab fa-twitter"></i></a>
-      </div>
-    </div>
-  </div>
-  <div class="pt-4 mt-4 text-grey-darker text-xs border-t border-grey-lighter text-center"> ©2018 Keita Mizushima. All rights reserved.</div>
-</footer></body>
+
+<script type="text/javascript">
+
+  'use strict'
+
+  function pronounce() {
+
+    let word = document.getElementById('word').value;
+    let u = new SpeechSynthesisUtterance();
+    u.lang = 'en-US';
+    u.text = word;
+    speechSynthesis.speak(u);
+
+  }
+
+</script>
+
+</body>
 </html>
