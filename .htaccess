@@ -1,2 +1,4 @@
-RewriteEngine On
-RewriteRule ^(.*)$ https://www.google.com [L,R=301]
+RewriteEngine on
+RewriteRule test http://yahoo.co.jp/ [R=301,L]
+ErrorDocument 404 http://www.google.com/
+
