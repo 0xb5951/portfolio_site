@@ -1,3 +1,2 @@
 RewriteEngine On
-RewriteCond %{HTTPS} off
-RewriteRule ^(.*)$ https://mizushimakeita.me$1 [L,R=301]
+RewriteRule ^(.*)$ https://www.google.com [L,R=301]
