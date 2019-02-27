@@ -1,4 +1,4 @@
 RewriteEngine on
-RewriteRule test http://yahoo.co.jp/ [R=301,L]
-ErrorDocument 404 http://www.google.com/
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{ HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
