@@ -40,5 +40,9 @@ module.exports = {
         new htmlWebpackPlugin({
             template: "index.html"
         })
-    ]
+    ],
+    serve: {
+        content: path.resolve(__dirname, 'dist'),
+        port: 3000,
+    }
 };
