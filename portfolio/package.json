@@ -38,6 +38,8 @@
     "@types/react": "^16.8.19",
     "@types/react-redux": "^7.0.9",
     "eslint": "^5.16.0",
-    "eslint-plugin-react": "^7.13.0"
+    "eslint-plugin-react": "^7.13.0",
+    "webpack": "^4.32.2",
+    "webpack-cli": "^3.3.2"
   }
 }
