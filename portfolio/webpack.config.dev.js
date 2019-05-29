@@ -41,7 +41,7 @@ module.exports = {
             template: "index.html"
         })
     ],
-    serve: {
+    server: {
         content: path.resolve(__dirname, 'dist'),
         port: 3000,
     }
